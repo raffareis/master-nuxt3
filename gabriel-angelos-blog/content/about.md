@@ -1,11 +1,29 @@
 ---
-title: 'About Gabriel Angelos'
+title: 'About Me'
+description: 'About Gabriel Angelos'
+image:
+  src: '/Gabriel_Angelos_Portrait.webp'
+  alt: 'Gabriel Angelos'
+head:
+  meta:
+    - name: 'keywords'
+      content: 'Gabriel Angelos, Blood Ravens, Warhammer 40k, Space Marine, Chapter Master'
+    - name: 'robots'
+      content: 'index, follow'
+    - name: 'author'
+      content: 'Gabriel Angelos'
+    - name: 'copyright'
+      content: 'The Imperium of Man'
+    - name: 'og:title'
+      content: 'Gabriel Angelos'
+    - name: 'og:description'
+      content: 'About Gabriel Angelos'
+
 date: 2023-04-15
 draft: false
-ogTitle: 'About Gabriel Angelos'
-ogImage: 'https://placehold.co/1200x630'
-ogDescription: 'About Gabriel Angelos'
 ---
+
+![Gabriel Angelos](./Chapter_Master_Gabriel_Santos.webp)
 
 # Gabriel Angelos
 
