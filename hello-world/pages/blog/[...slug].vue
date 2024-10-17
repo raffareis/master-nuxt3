@@ -1,0 +1,13 @@
+<template>
+  <article>
+    <ContentDoc />
+  </article>
+</template>
+
+<script setup>
+const route = useRoute();
+console.log(route.params.slug);
+useHead({
+  title: route.params.slug[0],
+});
+</script>
