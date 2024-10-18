@@ -5,17 +5,22 @@
   <section v-else-if="status === 'error'">
     <p>Error: {{ error.message }}</p>
   </section>
-  <section v-else>
+  <section v-else class="not-prose">
     <ul class="grid grid-cols-1 gap-4">
       <li
-        v-for="project in projects"
-        :key="project.id"
+        v-for="post in posts"
+        :key="post._path"
         class="p-4 rounded-sm shadow-md border border-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700 transition-all duration-300"
       >
-        <NuxtLink :to="`/projects/${project.id}`">
-          <h3 class="text-lg font-semibold">{{ project.name }}</h3>
+        <NuxtLink :to="post._path">
+          <NuxtImg
+            :src="post.image?.src"
+            :alt="post.image?.alt"
+            class="w-full h-40 object-cover"
+          />
+          <h3 class="text-lg font-semibold">{{ post.title }}</h3>
           <p class="text-gray-600 dark:text-gray-400">
-            {{ project.description }}
+            {{ post.description }}
           </p>
         </NuxtLink>
       </li>
@@ -25,14 +30,16 @@
 
 <script setup>
 useHead({
-  title: 'My Projects',
+  title: 'Blog',
 });
 
 const {
-  data: projects,
+  data: posts,
   status,
   error,
-} = await useFetch('https://66edc832380821644cddfb25.mockapi.io/projects');
-console.log(status.value);
-console.log(projects.value);
+} = await useAsyncData('posts', () =>
+  queryContent('/blog/posts')
+    .only(['title', 'description', '_path', 'image'])
+    .find()
+);
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto max-w-2xl">
+  <div class="container mx-auto md:max-w-2xl lg:max-w-4xl">
     <header class="flex justify-between items-center mt-5 mb-5">
       <div class="flex items-center space-x-12">
         <NuxtLink to="/" class="text-xl font-semibold p-2 hover:bg-gray-200">
@@ -11,7 +11,7 @@
         <ColorModeSelector />
       </ClientOnly>
     </header>
-    <main class="p-2 mt-10">
+    <main class="p-2 mt-10 mx-auto">
       <slot />
     </main>
   </div>
